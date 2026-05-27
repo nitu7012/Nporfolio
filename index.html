@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitu | UI/UX & Web Designer</title>
+    <meta name="description"
+        content="Portfolio of Nitu, a UI/UX and Web Designer specializing in intuitive digital experiences.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./assest/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#c28424',
+                            hover: '#a8701c',
+                        },
+                        neutralCustom: {
+                            light: '#ffffff',
+                            dark: '#1a1a1a',
+                        },
+                        bg: {
+                            light: '#fbf7f1',
+                            dark: '#121212',
+                            card: '#f4f0e8',
+                            cardDark: '#1e1e1e'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Libre Caslon Text"', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body class="antialiased">
+
+    <!-- Header / Navbar -->
+    <div class="fixed top-6 left-0 w-full flex justify-center z-50 px-4 md:px-0">
+        <nav
+            class="bg-neutralCustom-dark text-white rounded-[40px] px-6 md:px-8 py-3.5 flex items-center justify-between md:justify-center gap-6 md:gap-14 shadow-xl border border-white/5 w-full md:w-max max-w-7xl ">
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div
+                    class="text-brand flex items-center justify-center group-hover:scale-105 transition-transform barnd-logo">
+                    <img src="./assest/img/n_logo.svg" alt="Nitu Logo" class="object-contain">
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold tracking-wider shrink-0">
+                <a href="#work" class="hover:text-brand transition-colors">WORK</a>
+                <a href="#about" class="hover:text-brand transition-colors">ABOUT</a>
+                <a href="#services" class="hover:text-brand transition-colors">SERVICES</a>
+                <a href="#contact" class="hover:text-brand transition-colors">GET IN TOUCH</a>
+
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/10 transition-colors text-white"
+                    aria-label="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-brand"></i>
+                    <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="mobile-nav-theme-toggle"
+                    class="p-2 rounded-full hover:bg-white/10 transition-colors text-white" aria-label="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-brand"></i>
+                    <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                </button>
+                <button id="mobile-menu-btn" class="p-1 rounded-full hover:bg-white/10 transition-colors shrink-0">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-neutralCustom-dark z-[55] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center gap-8 text-white">
+        <button id="close-menu-btn"
+            class="absolute top-8 right-8 p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#work" class="mobile-link text-2xl font-serif-heading hover:text-brand transition-colors">Work</a>
+        <a href="#about" class="mobile-link text-2xl font-serif-heading hover:text-brand transition-colors">About</a>
+        <a href="#services"
+            class="mobile-link text-2xl font-serif-heading hover:text-brand transition-colors">Services</a>
+        <a href="#contact" class="mobile-link text-2xl font-serif-heading hover:text-brand transition-colors">Get in
+            touch</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero"
+            class="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-36 pb-16 overflow-hidden hero-gradient-bg">
+            <div class="text-center max-w-5xl mx-auto z-10 reveal w-full flex flex-col items-center">
+
+                <div
+                    class="inline-flex items-center justify-center px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-transparent text-xs font-bold tracking-widest uppercase mb-8 relative mx-auto">
+                    Hello!
+                    <svg class="absolute -top-3 -right-5 w-6 h-6 text-brand" viewBox="0 0 40 40" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                        <path d="M12 18 Q 18 10 20 4" />
+                        <path d="M18 24 Q 28 20 34 16" />
+                    </svg>
+                </div>
+
+                <div class="relative inline-block text-center mb-8 max-w-full">
+                    <h1
+                        class="text-[2.25rem] sm:text-[3.5rem] md:text-6xl lg:text-[5.5rem] font-serif-heading font-normal leading-[1.15] tracking-tight text-neutralCustom-dark dark:text-neutralCustom-light">
+                        I'm <span class="text-brand font-bold italic">Nitu</span>,<br>
+                        UI/UX & Web Designer.
+                    </h1>
+                </div>
+            </div>
+
+            <div
+                class="w-full max-w-5xl mx-auto mt-4 px-4 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 relative z-10">
+                <div class="max-w-xs reveal delay-100 flex flex-col items-start">
+                    <span class="text-[3rem] text-brand font-serif leading-none h-4 mb-2">“</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
+                        Transforming ideas into high-fidelity designs and responsive web interfaces that engage users.
+                    </p>
+                </div>
+
+                <div class="max-w-xs reveal delay-200 flex flex-col items-start md:items-end md:text-right">
+                    <span class="text-[3rem] text-brand font-serif leading-none h-4 mb-2 md:self-end">“</span>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
+                        <span class="text-brand font-bold">UI/UX & Web Designer</span> crafting intuitive interfaces
+                        that blend creativity, usability, and impactful visual storytelling. Based in India.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Toggle Buttons -->
+            <div class="mt-12 md:mt-16 flex justify-center items-center reveal delay-300 relative z-20">
+                <div class="toggle-container" id="hero-toggle-container">
+                    <div class="slider"></div>
+
+                    <!-- Button 1: View Work -->
+                    <a href="#work" class="btn-work" id="hero-btn-work">
+                        View Work
+                        <i data-lucide="arrow-up-right" class="arrow-icon h-5"></i>
+                    </a>
+
+                    <!-- Button 2: Hire Me -->
+                    <a href="#contact" class="btn-hire" id="hero-btn-hire">
+                        Hire me
+                        <i data-lucide="arrow-up-right" class="arrow-icon h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I Do Section -->
+        <section id="services" class="py-24 px-6 max-w-7xl mx-auto border-t border-black/5 dark:border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_2.5fr] gap-16">
+                <div class="reveal">
+                    <div
+                        class="inline-block border-b-2 border-brand pb-2 text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+                        What I Do
+                    </div>
+                    <h2
+                        class="text-4xl md:text-5xl font-serif text-neutralCustom-dark dark:text-neutralCustom-light leading-tight">
+                        Building clean and user-focused interfaces.
+                    </h2>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+                    <!-- Service 1 -->
+                    <div
+                        class="reveal delay-100 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            UI/UX Design</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Designing intuitive, user-centered, and visually engaging interfaces focused on usability,
+                            accessibility, and seamless user experiences.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div
+                        class="reveal delay-200 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="monitor-smartphone" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            Web Design</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Creating responsive and modern websites with clean layouts, strong visual hierarchy, and
+                            engaging interactions across all devices.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div
+                        class="reveal delay-300 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="search" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            User Research</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Understanding user behavior, business goals, and pain points to build meaningful and
+                            effective digital solutions.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div
+                        class="reveal delay-100 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="layout-template" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            Design Systems</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Building scalable design systems, reusable components, and consistent UI patterns for modern
+                            digital products.
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div
+                        class="reveal delay-200 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="pen-tool" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            Wireframing & Prototyping</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Building scalable design systems, reusable components, and consistent UI patterns for modern
+                            digital products.
+                        </p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div
+                        class="reveal delay-300 group border-l-[3px] border-transparent hover:border-brand bg-[#fef9f0] dark:bg-[#1e1e1e] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="w-14 h-14 rounded-2xl border border-brand/30 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-colors">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-brand"></i>
+                        </div>
+                        <h3
+                            class="text-xl font-serif font-medium mb-3 text-neutralCustom-dark dark:text-neutralCustom-light">
+                            Visual & Brand Design</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Building scalable design systems, reusable components, and consistent UI patterns for modern
+                            digital products.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Work Section -->
+        <section id="work" class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 reveal">
+                <h2
+                    class="text-4xl sm:text-5xl font-serif-heading text-neutralCustom-dark dark:text-neutralCustom-light">
+                    Selected Works</h2>
+                <a href="#"
+                    class="group flex items-center gap-2 text-brand font-bold text-xs tracking-wider mt-4 md:mt-0 uppercase">
+                    View All Projects
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div
+                class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-4 mb-12 border-b border-black/5 dark:border-white/5 reveal delay-100">
+                <span class="text-base font-serif-heading whitespace-nowrap mr-2">Categories :-</span>
+                <button
+                    class="filter-btn relative px-5 py-2 whitespace-nowrap text-neutralCustom-dark dark:text-neutralCustom-light font-bold text-sm transition-colors"
+                    data-filter="all">
+                    <div
+                        class="filter-indicator absolute inset-0 bg-[#fce9c8] dark:bg-brand/20 -z-10 border-l-2 border-brand rounded-sm">
+                    </div>
+                    All
+                </button>
+                <button
+                    class="filter-btn relative px-5 py-2 whitespace-nowrap text-gray-500 dark:text-gray-400 hover:text-brand font-bold text-sm transition-colors"
+                    data-filter="live">Live Projects</button>
+                <button
+                    class="filter-btn relative px-5 py-2 whitespace-nowrap text-gray-500 dark:text-gray-400 hover:text-brand font-bold text-sm transition-colors"
+                    data-filter="case-study">Case Studies</button>
+                <button
+                    class="filter-btn relative px-5 py-2 whitespace-nowrap text-gray-500 dark:text-gray-400 hover:text-brand font-bold text-sm transition-colors"
+                    data-filter="web">Web Design</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="flex flex-col gap-12" id="projects-container">
+
+                <!-- Project 1: SpeedyParts -->
+                <article
+                    class="project-card reveal bg-[#e0e3e5] dark:bg-bg-cardDark rounded-2xl overflow-hidden flex flex-col lg:flex-row relative group"
+                    data-category="case-study">
+                    <div class="p-8 lg:p-14 flex-1 flex flex-col justify-center z-10 lg:w-[45%]">
+                        <span
+                            class="inline-block bg-white/50 dark:bg-black/30 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-medium mb-6 w-max border border-black/5 dark:border-white/10">UI
+                            Design Project</span>
+                        <h3 class="text-4xl font-serif mb-4 text-[#1a1a1a] dark:text-white">SpeedyParts</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8">
+                            SpeedyParts is a next-gen digital platform designed to revolutionize vehicle maintenance. We
+                            empower users to quickly source high-quality components and spare parts, ensuring a smooth,
+                            safe, and uninterrupted journey.
+                        </p>
+
+                        <div class="flex gap-4 mb-10 text-sm">
+                            <span class="font-serif font-medium text-black dark:text-white">My Contribution :</span>
+                            <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> UX Research
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Wireframing
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> UI Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Visual Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Component System
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-8 text-sm">
+                            <div class="text-gray-800 dark:text-gray-300"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Tools :</span> Figma
+                            </div>
+                            <div class="text-gray-800 dark:text-gray-300"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Type :</span> UI/UX Case
+                                Study</div>
+                        </div>
+
+                        <!-- CTA overlaps the right section -->
+                        <a href="./speedyP.html"
+                            class="absolute bottom-8 right-8 lg:right-auto lg:bottom-14 lg:left-1/2 lg:-translate-x-1/2 bg-brand text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-brand-hover transition-colors shadow-xl z-20">
+                            View Case study <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                   <div class="w-full lg:w-[55%] min-h-[300px] lg:min-h-[500px] overflow-hidden relative">
+                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            style="background-image: url('./assest/img/speedyparts.png');">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Syska Sense -->
+                <article
+                    class="project-card reveal bg-[#e7e5e1] dark:bg-bg-cardDark rounded-2xl overflow-hidden flex flex-col lg:flex-row relative group"
+                    data-category="live">
+                    <div class="p-8 lg:p-14 flex-1 flex flex-col justify-center z-10 lg:w-[45%]">
+                        <span
+                            class="inline-block bg-white/50 dark:bg-black/30 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-medium mb-6 w-max border border-black/5 dark:border-white/10">Case
+                            Study</span>
+                        <h3 class="text-4xl font-serif mb-4 text-[#1a1a1a] dark:text-white">Syska Sense</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8">
+                            Designed clean and modern mobile interfaces for a smart-home automation application focused
+                            on usability, visual consistency, and intuitive interactions.
+                        </p>
+
+                        <div class="flex gap-4 mb-10 text-sm">
+                            <span class="font-serif font-medium text-black dark:text-white">My Contribution :</span>
+                            <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Mobile App UI
+                                    Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Interface Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Visual Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Responsive
+                                    Layouts
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> UI Components
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-8 text-sm">
+                            <div class="text-gray-800 dark:text-gray-300"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Tools :</span> Figma
+                            </div>
+                            <div class="text-gray-800 dark:text-gray-300"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Type :</span> Live</div>
+                        </div>
+
+                        <a href="https://play.google.com/store/apps/details?id=com.msoftcode.syskasense"
+                            class="absolute bottom-8 right-8 lg:right-auto lg:bottom-14 lg:left-1/2 lg:-translate-x-1/2 bg-brand text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-brand-hover transition-colors shadow-xl z-20">
+                            View Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                   
+                    <div class="w-full lg:w-[55%] min-h-[300px] lg:min-h-[500px] overflow-hidden relative">
+                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            style="background-image: url('./assest/img/syska.png');">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Rathee Greenhouse -->
+                <article
+                    class="project-card reveal bg-[#e1e2da] dark:bg-bg-cardDark rounded-2xl overflow-hidden flex flex-col lg:flex-row relative group"
+                    data-category="web live">
+                    <div class="p-8 lg:p-14 flex-1 flex flex-col justify-center z-10 lg:w-[45%]">
+                        <span
+                            class="inline-block bg-white/50 dark:bg-black/30 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-medium mb-6 w-max border border-black/5 dark:border-white/10">Web
+                            Design</span>
+                        <h3 class="text-4xl font-serif mb-4 text-[#1a1a1a] dark:text-white">Rathee Greenhouse</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8">
+                            Designed and developed a fully responsive business website focused on modern UI, service
+                            presentation, and seamless user experience for greenhouse solutions.
+                        </p>
+
+                        <div class="flex gap-4 mb-10 text-sm">
+                            <span class="font-serif font-medium text-black dark:text-white">My Contribution :</span>
+                            <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Website UI
+                                    Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Frontend Coding
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Responsive
+                                    Development
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Modern Layout
+                                    Design
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-8 text-sm">
+                            <div class="text-gray-800 dark:text-gray-300"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Tech Stack :</span> HTML5
+                                &nbsp; CSS3 &nbsp; Bootstrap &nbsp; JavaScript</div>
+                            <div class="text-gray-800 dark:text-gray-300 mt-2 lg:mt-0"><span
+                                    class="font-serif text-lg text-black dark:text-white mr-2">Type :</span> Live</div>
+                        </div>
+
+                        <a href="https://ratheegreenhouse.com/"
+                            class="absolute bottom-8 right-8 lg:right-auto lg:bottom-14 lg:left-1/2 lg:-translate-x-1/2 bg-brand text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-brand-hover transition-colors shadow-xl z-20">
+                            View Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    
+                    <div class="w-full lg:w-[55%] min-h-[300px] lg:min-h-[500px] overflow-hidden relative">
+                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            style="background-image: url('./assest/img/rathi.png');">
+                        </div>
+                    </div>
+
+                   
+                </article>
+
+                <!-- Project 4: SAYONYX -->
+                <article
+                    class="project-card reveal bg-[#FFF1F3] dark:bg-bg-cardDark rounded-2xl overflow-hidden flex flex-col lg:flex-row relative group"
+                    data-category="web redesign">
+                    <div class="p-8 lg:p-14 flex-1 flex flex-col justify-center z-10 lg:w-[45%]">
+                        <span
+                            class="inline-block bg-white/50 dark:bg-black/30 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-medium mb-6 w-max border border-black/5 dark:border-white/10">
+                            Web Design
+                        </span>
+                        <h3 class="text-4xl font-serif mb-4 text-[#1a1a1a] dark:text-white">SAYONYX</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-8">
+                            Developed a premium responsive website experience focused on clean layouts, interaction
+                            design, and modern business presentation systems.
+                        </p>
+
+                        <div class="flex gap-4 mb-10 text-sm">
+                            <span class="font-serif font-medium text-black dark:text-white">My Contribution :</span>
+                            <ul class="text-gray-700 dark:text-gray-300 space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Website UI
+                                    Design
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Frontend Coding
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Responsive
+                                    Development
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-black dark:bg-white"></div> Modern Layout
+                                    Design
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-8 text-sm">
+                            <div class="text-gray-800 dark:text-gray-300">
+                                <span class="font-serif text-lg text-black dark:text-white mr-2">Tech Stack :</span>
+                                HTML5 &nbsp; CSS3 &nbsp; Bootstrap &nbsp; JavaScript
+                            </div>
+                            <div class="text-gray-800 dark:text-gray-300 mt-2 lg:mt-0">
+                                <span class="font-serif text-lg text-black dark:text-white mr-2">Type :</span> Live
+                            </div>
+                        </div>
+
+                        <a href="https://sanonyx.com/"
+                            class="absolute bottom-8 right-8 lg:right-auto lg:bottom-14 lg:left-1/2 lg:-translate-x-1/2 bg-brand text-white px-8 py-3 rounded-full flex items-center gap-2 hover:bg-brand-hover transition-colors shadow-xl z-20">
+                            View Project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+
+                    <div class="w-full lg:w-[55%] min-h-[300px] lg:min-h-[500px] overflow-hidden relative">
+                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                            style="background-image: url('./assest/img/synonyx.png');">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about"
+            class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-[#151515] rounded-3xl mb-20 shadow-sm border border-black/5 dark:border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-2 sm:p-6">
+                <div class="reveal">
+                    <div
+                        class="inline-block border-b-2 border-brand pb-2 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">
+                        About Me
+                    </div>
+                    <h2
+                        class="text-3xl sm:text-4xl font-serif-heading text-neutralCustom-dark dark:text-neutralCustom-light leading-tight mb-6">
+                        Designing intuitive digital experiences with creativity, clarity, and purpose.
+                    </h2>
+
+                    <div class="space-y-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        <p>
+                            I'm a UI/UX and Web Designer passionate about creating clean, modern, and user-focused
+                            digital experiences. I enjoy transforming ideas into intuitive interfaces that balance
+                            aesthetics, usability, and functionality.
+                        </p>
+                        <p>
+                            With experience in responsive web design and mobile application interfaces, I focus on
+                            crafting visually engaging solutions that improve user interaction and create meaningful
+                            digital experiences.
+                        </p>
+                        <p>
+                            I specialize in UI design, responsive websites, frontend implementation, and modern design
+                            systems using tools like Figma, HTML, CSS, Bootstrap, and JavaScript.
+                        </p>
+                    </div>
+
+                    <div
+                        class="mt-8 pt-8 border-t border-black/5 dark:border-white/5 text-sm flex flex-wrap gap-x-4 gap-y-2 items-center">
+                        <span class="font-serif text-lg text-black dark:text-white mr-2">Tools :</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">Figma</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">Canva</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">Framer</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">HTML5</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">CSS3</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">Bootstrap</span>
+                        <span
+                            class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-gray-700 dark:text-gray-300">JavaScript</span>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#"
+                            class="px-6 py-3 rounded-full bg-brand hover:bg-brand-hover text-white text-xs font-bold transition-all flex items-center gap-2 shadow-md">
+                            Download Resume <i data-lucide="download" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#contact"
+                            class="px-6 py-3 rounded-full border border-neutralCustom-dark dark:border-white hover:bg-neutralCustom-dark hover:text-white dark:hover:bg-white dark:hover:text-neutralCustom-dark text-xs font-bold transition-all flex items-center gap-2">
+                            Let's Connect <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal delay-200 relative flex justify-center items-center">
+                    <div class="absolute inset-0 blob-bg -z-10 w-full h-full scale-105"></div>
+                    <img src="./assest/img/about.png"
+                        alt="Nitu Portrait"
+                        class="w-[85%] sm:w-[75%] rounded-3xl object-cover shadow-xl relative z-10 aspect-[4/5] filter contrast-[1.02]">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Modal Window -->
+        <div id="contact-modal"
+            class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300 flex justify-center items-center p-4">
+            <div class="bg-white dark:bg-[#1a1a1a] rounded-2xl w-full max-w-md p-6 relative shadow-2xl transform scale-95 transition-transform duration-300"
+                id="contact-modal-content">
+                <button id="close-modal"
+                    class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Close modal">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <h3 class="text-2xl font-serif-heading font-bold mb-2">Get In Touch</h3>
+                <p class="text-xs text-gray-500 mb-6">Drop a message below, I'll get back shortly.</p>
+                <form id="contact-form" class="space-y-4 text-xs">
+                    <div>
+                        <label class="block font-bold mb-1">Name</label>
+                        <input type="text" required
+                            class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-[#222] border border-gray-200 dark:border-gray-800 focus:outline-none focus:border-brand text-sm">
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-1">Email</label>
+                        <input type="email" required
+                            class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-[#222] border border-gray-200 dark:border-gray-800 focus:outline-none focus:border-brand text-sm">
+                    </div>
+                    <div>
+                        <label class="block font-bold mb-1">Message</label>
+                        <textarea rows="4" required
+                            class="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-[#222] border border-gray-200 dark:border-gray-800 focus:outline-none focus:border-brand resize-none text-sm"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full py-3 bg-brand hover:bg-brand-hover text-white rounded-lg font-bold transition-colors flex justify-center items-center gap-2">
+                        <span>Send Message</span> <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Contact Pre-footer -->
+    <div id="contact" class="py-20 text-center px-4 sm:px-6">
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-serif-heading font-normal mb-10 leading-tight">
+            Let's build something<br><span class="italic font-bold text-brand">meaningful</span> together.
+        </h2>
+
+        <div class="flex justify-center gap-4 reveal delay-100">
+            <a href="mailto:nitukumari251001@gmail.com" id="open-mail"
+                class="w-12 h-12 bg-neutralCustom-dark dark:bg-white text-white dark:text-neutralCustom-dark rounded-xl flex items-center justify-center hover:bg-brand dark:hover:bg-brand hover:text-white dark:hover:text-white transition-all transform hover:-translate-y-1 shadow-md"
+                aria-label="Email Address Link">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/nitukumari70/" target="_blank" rel="noopener noreferrer"
+                class="w-12 h-12 bg-neutralCustom-dark dark:bg-white text-white dark:text-neutralCustom-dark rounded-xl flex items-center justify-center hover:bg-brand dark:hover:bg-brand hover:text-white dark:hover:text-white transition-all transform hover:-translate-y-1 shadow-md"
+                aria-label="LinkedIn Profile">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            </a>
+
+            <a href="https://www.behance.net/nitukumari59" target="_blank" rel="noopener noreferrer"
+                class="w-12 h-12 bg-neutralCustom-dark dark:bg-white text-white dark:text-neutralCustom-dark rounded-xl flex items-center justify-center hover:bg-brand dark:hover:bg-brand hover:text-white dark:hover:text-white transition-all transform hover:-translate-y-1 shadow-md"
+                aria-label="Behance Profile">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M22 12c0-1.1-.37-2.01-1.11-2.73-.74-.72-1.72-1.08-2.93-1.08-1.22 0-2.2.37-2.93 1.1-.73.74-1.1 1.69-1.1 2.87 0 1.15.36 2.09 1.08 2.81.72.73 1.7 1.09 2.95 1.09 1.03 0 1.88-.24 2.54-.73.66-.49 1.06-1.12 1.19-1.91h-2.18c-.12.33-.35.59-.68.79-.33.19-.74.29-1.21.29-.53 0-.96-.15-1.3-.46-.34-.31-.53-.78-.56-1.4h6.39c.02-.19.03-.4.03-.64zm-6.32-1c.05-.48.24-.87.56-1.18.32-.31.74-.46 1.25-.46.48 0 .88.15 1.19.45.31.3.49.69.53 1.19h-3.53zM11.17 11.2c.45-.48.67-1.1.67-1.85 0-.7-.22-1.27-.67-1.69-.45-.43-1.13-.64-2.04-.64H3.5v11.24h5.72c.94 0 1.66-.23 2.15-.69.49-.46.74-1.13.74-2 0-.89-.31-1.57-.94-2.05s.03-.1.17-.32zm-5.46-3H8c.37 0 .66.08.86.25.2.17.3.42.3.75s-.1.57-.3.73C8.66 10.09 8.37 10.17 8 10.17H5.71V8.2zm2.53 7.82H5.71v-2.19H8.3c.4 0 .71.09.92.27.21.18.31.45.31.81 0 .37-.1.65-.31.83-.21.19-.52.28-.98.28zM15.14 5.37h5.36v1.36h-5.36V5.37z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neutralCustom-dark text-white pt-16 pb-8 px-4 sm:px-6">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/10 pb-12 mb-8">
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div
+                    class="text-brand flex items-center justify-center group-hover:scale-105 transition-transform barnd-logo">
+                    <img src="./assest/img/n_logo.svg" alt="Nitu Logo" class="object-contain">
+                </div>
+            </a>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold tracking-wider text-white/70">
+                <a href="#" class="hover:text-brand transition-colors">LINKEDIN</a>
+                <a href="#" class="hover:text-brand transition-colors">BEHANCE</a>
+                <a href="#" class="hover:text-brand transition-colors">EMAIL</a>
+            </div>
+        </div>
+        <div class="text-center text-[10px] text-white/40 tracking-widest font-bold uppercase">
+            © 2026 UI/UX PORTFOLIO. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <!-- Core Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const html = document.documentElement;
+            const btnTheme = document.getElementById('theme-toggle');
+            const btnMobileTheme = document.getElementById('mobile-nav-theme-toggle');
+
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            } else {
+                html.classList.remove('dark');
+            }
+
+            const toggleTheme = () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            };
+
+            if (btnTheme) btnTheme.addEventListener('click', toggleTheme);
+            if (btnMobileTheme) btnMobileTheme.addEventListener('click', toggleTheme);
+
+            // Mobile Menu Open/Close Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                });
+            }
+            if (closeMenuBtn) {
+                closeMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            }
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+
+            // Scroll Animations Observer
+            const reveals = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+            reveals.forEach(el => revealObserver.observe(el));
+
+            // Hero Slider Toggle Controls (Fixed Hover/Touch logic for both buttons)
+            const toggleContainer = document.getElementById('hero-toggle-container');
+            const btnWork = document.getElementById('hero-btn-work');
+            const btnHire = document.getElementById('hero-btn-hire');
+
+            if (toggleContainer && btnWork && btnHire) {
+                // Mouse controls
+                btnHire.addEventListener('mouseenter', () => toggleContainer.classList.add('hire-active'));
+                btnWork.addEventListener('mouseenter', () => toggleContainer.classList.remove('hire-active'));
+
+                // Touch events support for mobile devices
+                btnHire.addEventListener('touchstart', (e) => {
+                    toggleContainer.classList.add('hire-active');
+                });
+                btnWork.addEventListener('touchstart', (e) => {
+                    toggleContainer.classList.remove('hire-active');
+                });
+            }
+
+            // Categories Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        const indicator = b.querySelector('.filter-indicator');
+                        if (indicator) indicator.remove();
+                        b.classList.remove('text-neutralCustom-dark', 'dark:text-neutralCustom-light');
+                        b.classList.add('text-gray-500', 'dark:text-gray-400');
+                    });
+
+                    const newIndicator = document.createElement('div');
+                    newIndicator.className = 'filter-indicator absolute inset-0 bg-[#fce9c8] dark:bg-brand/20 -z-10 border-l-2 border-brand rounded-sm';
+                    btn.appendChild(newIndicator);
+
+                    btn.classList.remove('text-gray-500', 'dark:text-gray-400');
+                    btn.classList.add('text-neutralCustom-dark', 'dark:text-neutralCustom-light');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projects.forEach(project => {
+                        const categories = project.getAttribute('data-category') || '';
+                        if (filterValue === 'all' || categories.includes(filterValue)) {
+                            project.style.display = 'flex';
+                            setTimeout(() => project.classList.add('active'), 20);
+                        } else {
+                            project.style.display = 'none';
+                            project.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            // Contact Popup Window Logic
+            const mailBtns = document.querySelectorAll('#open-mail');
+            const modal = document.getElementById('contact-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalContent = document.getElementById('contact-modal-content');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            };
+
+            mailBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        });
+    </script>
+</body>
+
+</html>
